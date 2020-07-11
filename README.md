@@ -3,6 +3,6 @@ Small web development codes using HTML,CSS and JAVASCRIPT which helps every web 
 
 # Project-list
 
-1.E-mail 
-2.Password grid
-3.Background Animation
+## 1.E-mail 
+## 2.Password grid
+## 3.Background Animation
