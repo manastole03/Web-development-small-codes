@@ -1,0 +1,41 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body
+{
+	background-color: #1e2d48;
+	
+}
+h1
+{
+	position: center;
+	top: 50%;
+	left:100%;
+	
+	box-sizing:border-box;
+	background-color: lightblue;
+	transform: translate(50% , 50%);
+	font-size: 100px;
+	font-family: sans-serif;
+	white-space: nowrap;
+	text-transform: uppercase;
+	background: url("C:\Users\HP\Desktop\download.jpg") no-repeat;
+	-webkit-background-clip:text;
+	color: transparent;
+	animation: change 10s linear infinite ;
+	animation-direction: alternate;
+}
+@keyframes change 
+{
+	0%
+	{
+		background-position: 0 0;
+	}
+	100%
+	{
+		background-position: 100% 100%;
+	}
+}
