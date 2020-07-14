@@ -1,0 +1,23 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;;
+}
+body
+{
+	background-color: lightblue;
+	text-align: center;
+	margin-top: 33px;
+}
+ .thumbnail 
+ {
+ 	background-color: #73AD21;
+ 	border: 2px solid black;
+ 	border-radius: 100px;
+ }
+    
+ .thumbnail .caption 
+ {
+ 	background-color: #dd;
+ }
