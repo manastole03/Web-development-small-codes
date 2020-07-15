@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+        crossorigin="anonymous">
+    <title>MyTunes</title>
+    <link rel="stylesheet" type="text/css" href="music.css">
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+/****************************************************** CSS Variables *********************************************************************/
+:root {
+    --primary-color: #b90415;
+    --primary-color-hover: #d3071b;
+    --secondary-color: #103063;
+    --secondary-color-hover: #143f85;
+    --light-color: #f4f4f4;
+}
+
+body {
+    font-family: 'PT Sans', sans-serif;
+    background-color: #252529;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    line-height: 1.6;
+  }
+
+img {
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: gray;
+  }
+li.hide-on-small
+{
+  right:0;
+}
+
+/********************************************************** Section *********************************************************************/
+
+.section {
+    padding: 2rem 0;
+    font-family: sans-serif;
+    color: grey;
+  }
+
+.section-head {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.section h3 {
+    font-size: 2rem;
+}
+
+section#entertainment {
+    background: url(../img/section-bg.jpeg) no-repeat bottom/cover;
+    padding: 10rem 0;
+}
+
+.gift-cards {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+  /* Showcase */
+#showcase {
+    margin:0;
+    padding: 0;
+    background: url('../img/showcase.jpeg') no-repeat center/cover;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-y: hidden;
+}
+
+#showcase .container {
+    margin-top: 25vh;
+}
+
+#showcase h1 {
+    font-size: 4rem;
+    margin-bottom: 0;
+    font-family: sans-serif;
+    color: lightblue;
+
+
+}
+
+#showcase h2 {
+    font-size: 2rem;
+    color: grey;
+    font-family: sans-serif;
+  }
+
+  /****************************************** Footer *********************************************/
+footer .footer-cols {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+  }
+
+  footer .footer-cols ul {
+    list-style: none;
+  }
+
+  footer .footer-cols ul li:first-child {
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: #444 solid 1px;
+    margin-bottom: 1rem;
+  }
+
+  footer .footer-bottom {
+    background: #333;
+    padding: 1rem;
+  }
+
+/* Utility Classes */
+.container {
+    max-width: 1180px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+.lead {
+    font-size: 1.3rem;
+}
+
+.text-center {
+    text-align: center;
+  }
+
+
+/* Buttons */
+.btn {
+    padding: 1rem;
+    color: #fff;
+    display: inline-block;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background: var(--primary-color-hover);
+  }
+
+  .btn-secondary {
+    background: var(--secondary-color);
+  }
+
+  .btn-secondary:hover {
+    background: var(--secondary-color-hover);
+  }
+
+  /* Text colors */
+.text-primary {
+    color: var(--primary-color);
+  }
+
+  .text-secondary {
+    color: var(--secondary-color);
+  }
+
+  .text-light {
+    color: var(--light-color);
+  }
+
+  .bg-light {
+    background: var(--light-color);
+    color: #333;
+  }
+
+.mb {
+    margin-bottom: 1rem;
+  }
+
+  .mt {
+    margin-top: 1rem;
+  }
+
+  /******************************************************** Navigation ****************************************************************/
+
+  nav {
+    height: 40px;
+    width: 100%;
+    background-color: #333;
+    color: rgb(51, 34, 34);
+    position: fixed;
+  }
+  nav ul {
+    padding: 0;
+    margin: 0;
+  }
+  nav li {
+    display: inline;
+    float: left;
+  }
+  nav a {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 0;
+    color: #eee;
+    text-decoration: none;
+  }
+  nav li:hover {
+    background-color: #444;
+  }
+  nav a#openup {
+    display: none;
+  }
+
+  @media screen and (max-width: 580px) {
+
+    .hide-on-small {
+        display: none;
+    }
+
+    #showcase {
+        height: 50vh;
+    }
+
+    #showcase .container {
+        margin-top: 15vh;
+    }
+
+    #showcase h1 {
+        font-size: 3rem;
+      }
+
+    #showcase h2 {
+        font-size: 1.5rem;
+    }
+
+    nav {
+      height: auto;
+      border-bottom: 0;
+    }
+    nav ul {
+      display: none;
+      height: auto;
+    }
+    nav li {
+      width: 100%;
+      float: left;
+      position: relative;
+    }
+    nav a {
+      text-align: left;
+      width: 100%;
+      text-indent: 25px;
+      background: #333;
+      border-bottom: 1px solid #555;
+    }
+    nav a:hover {
+      background: #444;
+    }
+    nav a#openup:after {
+      content: "|||";
+      transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+      /* IE 9 */
+      -webkit-transform: rotate(-90deg);
+      /* Safari and Chrome */
+      width: 30px;
+      height: 30px;
+      display: inline-block;
+      position: absolute;
+      right: 5px;
+      top: 20px;
+    }
+    nav a#openup {
+      display: block;
+      background-color: #333;
+      width: 100%;
+      position: relative;
+    }
+  }
+  .cf:before, .cf:after {
+    content: "";
+    display: table;
+  }
+
+  .cf:after {
+    clear: both;
+  }
+
+  .cf {
+    zoom: 1;
+  }
+
+  @media screen and (max-width: 780px) {
+    .gift-cards {
+      grid-template-columns: 1fr;
+    }
+
+    footer .footer-cols {
+      display: none;
+    }
+  }
+
+  @media screen and (max-height: 580px) {
+    #showcase p.lead {
+      display: none;
+    }
+  }
+</style>
+<body>
+
+
+<!--------------------------------- Showcase and Nav -------------------------------------------->
+
+
+    <div id="showcase">
+        <header>
+            <nav class='cf'>
+                <ul class='cf'>
+                    <li class="hide-on-small">
+                        <a href="#showcase">My Tunes</a>
+
+                    </li>
+                    <li>
+                        <a href='#showcase'>Overview</a>
+                    </li>
+                    <li>
+                        <a href='#music'>Your Music</a>
+                    </li>
+                    <li>
+                        <a href='#video'>Video Music</a>
+                    </li>
+                    <li>
+                        <a href='#gift-cards'>Gift Cards</a>
+                    </li>
+                </ul>
+                <a href='#' id='openup'>MyTunes</a>
+            </nav>
+        </header>
+        <div class="section-main container">
+            <h1>MyTunes</h1>
+            <h2>Let's Celebrate your Good time With us </h2>
+            <h2>We care your choices.</h2>
+            <h2>Your music playlist , movies, and TV shows Carecenter.</h2>
+            <p class="lead hide-on-small">
+                We provide you is the best way to organize and enjoy the music, movies, and TV shows you already have — and shop for
+                the ones you want. 
+                Enjoy all the entertainment myTunes has to offer on your Mac and PC.
+            </p>
+        </div>
+    </div>
+
+
+<!----------------------------------- Music Section ---------------------------------------------->
+
+
+    <section id="music" class="section">
+        <div class="container">
+            <h2 class="section-head">
+                <i class="fas fa-music"></i> Your Music , our platform
+            </h2>
+            <h3>45 million+ songs, Zero ads & user's compatible.</h3>
+            <p class="lead">Stream over 45 million+ songs, ad-free. Or Make your own albums , download albums and tracks your music to it listen to offline. All
+                the music in your personal
+                myTunes library — no matter where it came from — lives right alongside the Orange Music catalog. Start your
+                free
+                three-month trial with no commitment, and cancel anytime.</p>
+            <a href="#" class="btn btn-primary mb">Start Your Trial Now</a>
+            <p class="text-light">Create your own music playlist with us.</p>
+            <img src="img/mockup1.png" alt="">
+        </div>
+    </section>
+
+<!-------------------------------------- Video Section -------------------------------------------->
+
+    <section id="video" class="section bg-light">
+        <div class="container">
+            <h3>The movie and TV collection you always wished for. Granted.</h3>
+            <p class="lead">With over 100,000 movies and TV shows to choose from, there’s always something great to watch
+                on myTunes and if you
+                watch on Orange TV 4K, you’ll be able to enjoy a tremendous selection of your favorite content in 4K HDR.
+                So get
+                ready to enjoy episodes of your favorite TV shows or hit movies you’ve been waiting to see — anytime,
+                anywhere. Just
+                tap to play, or even download if you’re going somewhere you won’t have Wi-Fi.</p>
+            <a href="#" class="btn btn-secondary">Read More</a>
+            <img src="img/mockup2.png" alt="">
+        </div>
+    </section>
+
+<!---------------------------------- Entertainment Section ---------------------------------------->
+
+    <section id="entertainment" class="section">
+        <div class="container">
+          <h1>Any Time , Any Place </h1>
+            <h3> Available wherever you are.</h3>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem veniam nobis, nisi ut
+                expedita, doloribus reprehenderit
+                explicabo non velit repellat alias saepe inventore repellendus? Molestias suscipit eos tempora? Quae
+                quaerat cumque
+                in veritatis impedit dolorum sapiente recusandae minima quo aperiam quam, excepturi quasi totam ad quas?
+                Ipsam laudantium
+                soluta delectus!</p>
+        </div>
+    </section>
+
+<!--------------------------------------- Gift Card Section --------------------------------------->
+
+    <section id="gift-cards" class="section bg-light">
+        <div class="container">
+            <div class="gift-cards">
+                <div>
+                    <img src="img/cards.png" alt="">
+                </div>
+                <div>
+                    <h2>Gift Cards</h2>
+                    <p>
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque expedita tempore quasi omnis a aut
+                        et totam illo fuga accusamus
+                        dolorum vero, ut harum consectetur. Minima molestias officiis culpa non sed dicta itaque. Et
+                        aliquam illo obcaecati
+                        molestias veritatis porro.
+                    </p>
+                    <p>Already have an Orange MyTunes Music Gift Card?</p>
+                    <hr>
+                    <a href="#" class="text-secondary">
+                        <i class="fas fa-chevron-right"></i> Redeem
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!------------------------------------ Footer ----------------------------------------------------->
+
+  <footer>
+        <div class="container">
+          <div class="footer-cols">
+            <ul>
+              <li>Shop & Learn</li>
+              <li>
+
+                <a href="#">Music</a>
+              </li>
+              <li>
+                <a href="#">Movies</a>
+              </li>
+              <li>
+                <a href="#">Shows</a>
+              </li>
+              <li>
+                <a href="#">Apps</a>
+              </li>
+              <li>
+                <a href="#">Gift Cards</a>
+              </li>
+            </ul>
+
+            <ul>
+              <li>Orange Store</li>
+              <li>
+                <a href="#">Find a Store</a>
+              </li>
+              <li>
+                <a href="#">Today at Orange</a>
+              </li>
+              <li>
+                <a href="#">Orange Camp</a>
+              </li>
+              <li>
+                <a href="#">Financing</a>
+              </li>
+              <li>
+                <a href="#">Order Status</a>
+              </li>
+            </ul>
+
+            <ul>
+              <li>Education & Business</li>
+              <li>
+                <a href="#">Orange & Education</a>
+              </li>
+              <li>
+                <a href="#">Shop For College</a>
+              </li>
+              <li>
+                <a href="#">Orange & Business</a>
+              </li>
+              <li>
+                <a href="#">Shop For Business</a>
+              </li>
+              <li>
+                <a href="#">Jobs</a>
+              </li>
+            </ul>
+
+            <ul>
+              <li>About Orange</li>
+              <li>
+                <a href="#">Newsroom</a>
+              </li>
+              <li>
+                <a href="#">Orange Leadership</a>
+              </li>
+              <li>
+                <a href="#">Investors</a>
+              </li>
+              <li>
+                <a href="#">Events</a>
+              </li>
+              <li>
+                <a href="#">Contact Orange</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+        <div class="footer-bottom text-center">
+          Copyright &copy; 2019 Orange myTunes
+        </div>
+    </footer>
+
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
